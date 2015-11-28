@@ -1,0 +1,119 @@
+#%RAML 0.8
+title: sportyvity
+version: v1
+/clients:
+  displayName: all clients
+  post:
+    description: create a new client
+  /{id}:
+    displayName: concreate client
+    get:
+      description: get client by id
+    put:
+      description: update client by id
+    /trainers:
+      displayName: list of client trainers
+      get:
+        description: get a list of client trainers
+    /programs:
+      displayName: list of programs
+      get:
+        description: get list of programs
+      /{id}:
+        displayName: resourceName
+        /workouts:
+          displayName: resourceName
+          get:
+            description: <<insert text or markdown here>>
+          /{id}:
+            displayName: resourceName
+            get:
+              description: <<insert text or markdown here>>
+            /exercises:
+              displayName: resourceName
+              get:
+                description: <<insert text or markdown here>>
+    /requests:
+      displayName: client's requests
+      get:
+        description: get a list of client's requests
+      post:
+        description: make a new request
+      /{id}:
+        displayName: Concreate request
+        delete:
+          description: delete a request
+    /messeges:
+      displayName: Client's messeges
+      get:
+        description: get a list of messeges
+      post:
+        description: make a new messege
+    /workoutreports:
+      displayName: resourceName
+      post:
+        description: <<insert text or markdown here>>
+      /{id}:
+        displayName: resourceName
+        /results:
+          displayName: resourceName
+          post:
+            description: <<insert text or markdown here>>
+/trainers:
+  displayName: triners
+  post:
+    description: create a new trainer
+  /{id}:
+    displayName: concreate tiner
+    get:
+      description: get a triner
+    put:
+      description: update a triner
+    /clients:
+      displayName: list of triner's clients
+      get:
+        description: get a list of triner's clients
+      /{id}:
+        displayName: concreate client
+        /programs:
+          displayName: client's programs
+          get:
+            description: get a list of programs
+          post:
+            description: make a new program
+          /{id}:
+            displayName: concreate program
+            put:
+              description: update program
+            /workouts:
+              displayName: program's workouts
+              get:
+                description: <<insert text or markdown here>>
+              post:
+                description: <<insert text or markdown here>>
+              /{id}:
+                displayName: resourceName
+                put:
+                  description: <<insert text or markdown here>>
+                delete:
+                  description: <<insert text or markdown here>>
+                /excercises:
+                  displayName: resourceName
+                  get:
+                    description: <<insert text or markdown here>>
+                  post:
+                    description: <<insert text or markdown here>>
+                  /{id}:
+                    displayName: resourceName
+                    put:
+                      description: <<insert text or markdown here>>
+                    delete:
+                      description: <<insert text or markdown here>>
+    /requests:
+      displayName: triner's requests
+      get:
+        description: get a list of requests
+      /{id}:
+        displayName: concreate request
+        put:
+          description: update request
