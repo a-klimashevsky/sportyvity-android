@@ -13,11 +13,11 @@ public class Exercise {
     @SerializedName("title")
     private String mTitle;
 
-    @SerializedName("repeatTime")
-    private int mRepeatTime;
+    @SerializedName("reps")
+    private int mReps;
 
-    @SerializedName("try")
-    private int mTry;
+    @SerializedName("sets")
+    private int mSets;
 
     @SerializedName("comments")
     private String mComments;
@@ -30,12 +30,12 @@ public class Exercise {
         return mTitle;
     }
 
-    public int getRepeatTime() {
-        return mRepeatTime;
+    public int getReps() {
+        return mReps;
     }
 
-    public int getTry() {
-        return mTry;
+    public int getSets() {
+        return mSets;
     }
 
     public String getComments() {

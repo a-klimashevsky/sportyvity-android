@@ -15,8 +15,11 @@ public class Result {
     @SerializedName("weight")
     private int mWeight;
 
-    @SerializedName("repeatTime")
-    private int mRepeatTime;
+    @SerializedName("unit")
+    private int mUnit;
+
+    @SerializedName("reps")
+    private int mReps;
 
     @SerializedName("date")
     private Date mDate;
@@ -29,8 +32,8 @@ public class Result {
         return mWeight;
     }
 
-    public int getRepeatTime() {
-        return mRepeatTime;
+    public int getReps() {
+        return mReps;
     }
 
     public Date getDate() {
