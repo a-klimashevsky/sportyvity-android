@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+
+    <com.sportivity.views.RoundedImageView
+        android:id="@+id/avatar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginRight="24dp"
+        tools:src="@mipmap/ic_test_trainer"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_toRightOf="@id/avatar"
+        android:textSize="@dimen/main_font_size"
+        tools:text="Mark Zoidberg"/>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_marginBottom="8dp"
+        android:layout_toEndOf="@+id/avatar"
+        android:isIndicator="true"
+        android:maxHeight="20dp"
+        android:minHeight="20dp"
+        android:progressDrawable="@drawable/ratingbar_white"
+        android:rating="3"/>
+
+    <TextView
+        android:id="@+id/price_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ratingBar"
+        android:layout_toEndOf="@id/avatar"
+        android:background="@color/colorAccent"
+        android:padding="4dp"
+        tools:text="24-54$"/>
+</RelativeLayout>

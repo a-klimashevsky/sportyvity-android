@@ -9,6 +9,16 @@ import java.util.Date;
  */
 public class Person {
 
+    public Person(){}
+
+    public Person(String name, String avatar){
+        mName = name;
+        mAvatar = avatar;
+    }
+
+    @SerializedName("id")
+    private int mId;
+
     @SerializedName("name")
     private String mName;
 
@@ -35,5 +45,9 @@ public class Person {
 
     public Date getBirthday() {
         return mBirthday;
+    }
+
+    public int getId() {
+        return mId;
     }
 }

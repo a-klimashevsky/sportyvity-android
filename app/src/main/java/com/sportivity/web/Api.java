@@ -18,6 +18,7 @@ import retrofit.http.GET;
 import retrofit.http.POST;
 import retrofit.http.PUT;
 import retrofit.http.Path;
+import retrofit.http.Query;
 
 /**
  * Created by Alex Klimashevsky on 28.11.2015.
@@ -69,5 +70,5 @@ public interface Api {
                         @Body Result result);
 
     @GET("trainers")
-    List<Trainer> getTrainers();
+    List<Trainer> getTrainers(@Query("type") int type, @Query("minRating") float minRating);
 }
