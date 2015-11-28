@@ -2,22 +2,32 @@ package com.sportivity.web.entities;
 
 import com.google.gson.annotations.SerializedName;
 
+import io.realm.RealmObject;
+
 /**
  * Created by Alex Klimashevsky on 28.11.2015.
  */
-public class Workout {
+public class Workout extends RealmObject {
 
     @SerializedName("program")
-    private Program mProgram;
+    private Program program;
 
     @SerializedName("title")
-    private String mTitle;
+    private String title;
 
     public Program getProgram() {
-        return mProgram;
+        return program;
     }
 
     public String getTitle() {
-        return mTitle;
+        return title;
+    }
+
+    public void setProgram(Program program) {
+        this.program = program;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

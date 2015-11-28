@@ -35,6 +35,11 @@
             android:label="@string/title_activity_new_request"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".TrainingObservingActivity"
+            android:label="@string/title_activity_training_observing"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

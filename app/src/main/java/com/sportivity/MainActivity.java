@@ -2,6 +2,7 @@ package com.sportivity;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -89,19 +90,12 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_search) {
             fragmentManager
                     .beginTransaction()
-                        .replace(R.id.container, TrainerListFragment.newInstance())
+                    .replace(R.id.container, TrainerListFragment.newInstance())
                     .commit();
             setTitle("Trainers");
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_trains) {
+            Intent intent = new Intent(this, TrainingObservingActivity.class);
+            startActivity(intent);
         }
 
         invalidateOptionsMenu();

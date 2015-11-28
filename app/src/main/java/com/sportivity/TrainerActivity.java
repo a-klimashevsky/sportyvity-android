@@ -1,5 +1,6 @@
 package com.sportivity;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -11,6 +12,7 @@ import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -20,7 +22,11 @@ import com.sportivity.web.entities.Trainer;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
+import io.realm.Realm;
+
 public class TrainerActivity extends AppCompatActivity implements View.OnClickListener {
+
+    public static final String EXTRA_TRAINER_ID = "id";
 
     private CollapsingToolbarLayout collapsingToolbarLayout;
 
@@ -30,19 +36,22 @@ public class TrainerActivity extends AppCompatActivity implements View.OnClickLi
 
     private TextView mDescriptionView;
 
+    private Trainer mTrainer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trainer);
-        Trainer faked = new Trainer("Jeck Carter", "http://www.followingthenerd.com/site/wp-content/uploads/avatar.jpg_274898881.jpg", "25-50$", 4.5f);
-        faked.setDescription("Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum ");
-        //ViewCompat.setTransitionName(findViewById(R.id.app_bar_layout), EXTRA_IMAGE);
+        int id = getIntent().getExtras().getInt(EXTRA_TRAINER_ID);
+        Realm realm = Realm.getInstance(this);
+        mTrainer = realm.where(Trainer.class).equalTo("id", id).findFirst();
+         //ViewCompat.setTransitionName(findViewById(R.id.app_bar_layout), EXTRA_IMAGE);
         supportPostponeEnterTransition();
 
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        String itemTitle = faked.getName();
+        String itemTitle = mTrainer.getName();
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         collapsingToolbarLayout.setTitle(itemTitle);
         collapsingToolbarLayout.setExpandedTitleColor(getResources().getColor(android.R.color.transparent));
@@ -50,10 +59,10 @@ public class TrainerActivity extends AppCompatActivity implements View.OnClickLi
         mPriceRateView = (TextView) findViewById(R.id.price_rate);
         mDescriptionView = (TextView) findViewById(R.id.description);
         final ImageView image = (ImageView) findViewById(R.id.image);
-        mRatingBar.setRating(faked.getRating());
-        mPriceRateView.setText(faked.getPriceRate());
-        mDescriptionView.setText(faked.getDescription());
-        Picasso.with(this).load(faked.getAvatar()).into(image, new Callback() {
+        mRatingBar.setRating(mTrainer.getRating());
+        mPriceRateView.setText(mTrainer.getPriceRate());
+        mDescriptionView.setText(mTrainer.getDescription());
+        Picasso.with(this).load(mTrainer.getAvatar()).into(image, new Callback() {
             @Override public void onSuccess() {
                 Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();
                 Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
@@ -89,6 +98,17 @@ public class TrainerActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
+        Intent intent = new Intent(this, NewRequestActivity.class);
+        intent.putExtra(NewRequestActivity.EXTRA_TRAINER_ID, mTrainer.getId());
+        startActivity(intent);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+        }
+        return true;
     }
 }

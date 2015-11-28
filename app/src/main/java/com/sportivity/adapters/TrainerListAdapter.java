@@ -1,5 +1,6 @@
 package com.sportivity.adapters;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
@@ -15,6 +16,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.sportivity.R;
+import com.sportivity.TrainerActivity;
 import com.sportivity.web.entities.Trainer;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -53,7 +55,7 @@ public class TrainerListAdapter extends RecyclerView.Adapter<TrainerListAdapter.
         return mTrainers == null ? 0 : mTrainers.size();
     }
 
-    public static class TrainerViewHolder extends RecyclerView.ViewHolder {
+    public static class TrainerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         @Bind(R.id.name)
         TextView mNameView;
@@ -69,13 +71,17 @@ public class TrainerListAdapter extends RecyclerView.Adapter<TrainerListAdapter.
 
         View mView;
 
+        Trainer mTrainer;
+
         public TrainerViewHolder(View view) {
             super(view);
             mView = view;
             ButterKnife.bind(this, view);
+            mView.setOnClickListener(this);
         }
 
         public void bind(Trainer trainer) {
+            mTrainer = trainer;
             mNameView.setText(trainer.getName());
             mPriceRateView.setText(trainer.getPriceRate());
             mRatingBarView.setRating(trainer.getRating());
@@ -100,6 +106,13 @@ public class TrainerListAdapter extends RecyclerView.Adapter<TrainerListAdapter.
                         }
                     });
 
+        }
+
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(mView.getContext(), TrainerActivity.class);
+            intent.putExtra(TrainerActivity.EXTRA_TRAINER_ID, mTrainer.getId());
+            mView.getContext().startActivity(intent);
         }
     }
 }

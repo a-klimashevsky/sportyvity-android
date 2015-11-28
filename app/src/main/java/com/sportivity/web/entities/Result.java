@@ -4,39 +4,68 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.Date;
 
+import io.realm.RealmObject;
+
 /**
  * Created by Alex Klimashevsky on 28.11.2015.
  */
-public class Result {
+public class Result extends RealmObject {
 
     @SerializedName("exercise")
-    private Exercise mExercise;
+    private Exercise exercise;
 
     @SerializedName("weight")
-    private int mWeight;
+    private int weight;
 
     @SerializedName("unit")
-    private int mUnit;
+    private int unit;
 
     @SerializedName("reps")
-    private int mReps;
+    private int reps;
 
     @SerializedName("date")
-    private Date mDate;
+    private Date date;
+
+    public Result() {
+    }
 
     public Exercise getExercise() {
-        return mExercise;
+        return exercise;
     }
 
     public int getWeight() {
-        return mWeight;
+        return weight;
     }
 
     public int getReps() {
-        return mReps;
+        return reps;
     }
 
     public Date getDate() {
-        return mDate;
+        return date;
+    }
+
+    public void setExercise(Exercise exercise) {
+        this.exercise = exercise;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public int getUnit() {
+        return unit;
+    }
+
+    public void setUnit(int unit) {
+        this.unit = unit;
+    }
+
+    public void setReps(int reps) {
+        this.reps = reps;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

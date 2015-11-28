@@ -2,43 +2,65 @@ package com.sportivity.web.entities;
 
 import com.google.gson.annotations.SerializedName;
 
+import io.realm.RealmObject;
+
 /**
  * Created by Alex Klimashevsky on 28.11.2015.
  */
-public class Exercise {
+public class Exercise extends RealmObject {
 
     @SerializedName("workout")
-    private Workout mWorkout;
+    private Workout workout;
 
     @SerializedName("title")
-    private String mTitle;
+    private String title;
 
     @SerializedName("reps")
-    private int mReps;
+    private int reps;
 
     @SerializedName("sets")
-    private int mSets;
+    private int sets;
 
     @SerializedName("comments")
-    private String mComments;
+    private String comments;
 
     public Workout getWorkout() {
-        return mWorkout;
+        return workout;
     }
 
     public String getTitle() {
-        return mTitle;
+        return title;
     }
 
     public int getReps() {
-        return mReps;
+        return reps;
     }
 
     public int getSets() {
-        return mSets;
+        return sets;
     }
 
     public String getComments() {
-        return mComments;
+        return comments;
+    }
+
+    public void setWorkout(Workout workout) {
+        this.workout = workout;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setReps(int reps) {
+        this.reps = reps;
+    }
+
+    public void setSets(int sets) {
+        this.sets = sets;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
     }
 }

@@ -2,43 +2,65 @@ package com.sportivity.web.entities;
 
 import com.google.gson.annotations.SerializedName;
 
+import io.realm.RealmObject;
+
 /**
  * Created by Alex Klimashevsky on 28.11.2015.
  */
-public class Request {
+public class Request extends RealmObject {
 
     @SerializedName("from")
-    private Client mFrom;
+    private Client from;
 
     @SerializedName("to")
-    private Trainer mTrainer;
+    private Trainer trainer;
 
     @SerializedName("aim")
-    private int mAim;
+    private int aim;
 
     @SerializedName("status")
-    private int mStatus;
+    private int status;
 
     @SerializedName("comments")
-    private String mComment;
+    private String comment;
 
     public Client getFrom() {
-        return mFrom;
+        return from;
     }
 
     public Trainer getTrainer() {
-        return mTrainer;
+        return trainer;
     }
 
     public int getAim() {
-        return mAim;
+        return aim;
     }
 
     public int getStatus() {
-        return mStatus;
+        return status;
     }
 
     public String getComment() {
-        return mComment;
+        return comment;
+    }
+
+    public void setFrom(Client from) {
+        this.from = from;
+    }
+
+    public void setTrainer(Trainer trainer) {
+        this.trainer = trainer;
+    }
+
+    public void setAim(int aim) {
+        this.aim = aim;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 }

@@ -100,7 +100,7 @@
                         android:id="@+id/price_rate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@color/colorAccent"
+                        android:background="@drawable/block_background"
                         android:padding="4dp"
                         tools:text="24-54$"/>
 

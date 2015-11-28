@@ -24,6 +24,8 @@ import com.sportivity.loaders.TrainerListLoader;
 import com.sportivity.util.TrainerTypesUtil;
 import com.sportivity.web.entities.Trainer;
 
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 import butterknife.Bind;
@@ -89,9 +91,12 @@ public class TrainerListFragment extends Fragment implements LoaderManager.Loade
         ButterKnife.bind(this, root);
         LinearLayoutManager manager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         trainersView.setLayoutManager(manager);
-        ArrayAdapter<CharSequence> adapter =
-                new ArrayAdapter<CharSequence>(getContext(),
-                        android.R.layout.simple_spinner_item, TrainerTypesUtil.getTypes());
+        List<String> t = new LinkedList<>();
+        t.add("Type of a trainer:");
+        t.addAll(Arrays.asList(TrainerTypesUtil.getTypes()));
+        ArrayAdapter<String> adapter =
+                new ArrayAdapter<>(getContext(),
+                        android.R.layout.simple_spinner_item, t);
 
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

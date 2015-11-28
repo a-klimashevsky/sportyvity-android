@@ -4,42 +4,64 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.Date;
 
+import io.realm.RealmObject;
+
 /**
  * Created by Alex Klimashevsky on 28.11.2015.
  */
-public class Message {
+public class Message extends RealmObject {
     @SerializedName("from")
-    private Person mFrom;
+    private Client from;
 
     @SerializedName("to")
-    private Person mTo;
+    private Trainer to;
 
     @SerializedName("text")
-    private String mText;
+    private String text;
 
     @SerializedName("date")
-    private Date mDate;
+    private Date date;
 
     @SerializedName("type")
-    private int mType;
+    private int type;
 
-    public Person getFrom() {
-        return mFrom;
+    public Client getFrom() {
+        return from;
     }
 
-    public Person getTo() {
-        return mTo;
+    public Trainer getTo() {
+        return to;
     }
 
     public String getText() {
-        return mText;
+        return text;
     }
 
     public Date getDate() {
-        return mDate;
+        return date;
     }
 
     public int getType() {
-        return mType;
+        return type;
+    }
+
+    public void setFrom(Client from) {
+        this.from = from;
+    }
+
+    public void setTo(Trainer to) {
+        this.to = to;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 }

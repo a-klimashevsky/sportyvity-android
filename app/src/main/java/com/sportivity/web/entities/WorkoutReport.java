@@ -4,29 +4,43 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.Date;
 
+import io.realm.RealmObject;
+
 /**
  * Created by Alex Klimashevsky on 28.11.2015.
  */
-public class WorkoutReport {
+public class WorkoutReport extends RealmObject {
 
     @SerializedName("workout")
-    private Workout mWorkout;
+    private Workout workout;
 
     @SerializedName("startTime")
-    private Date mStartTime;
+    private Date startTime;
 
     @SerializedName("endTime")
-    private Date mEndTime;
+    private Date endTime;
 
     public Workout getWorkout() {
-        return mWorkout;
+        return workout;
     }
 
     public Date getStartTime() {
-        return mStartTime;
+        return startTime;
     }
 
     public Date getEndTime() {
-        return mEndTime;
+        return endTime;
+    }
+
+    public void setWorkout(Workout workout) {
+        this.workout = workout;
+    }
+
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
     }
 }
