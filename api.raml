@@ -43,12 +43,10 @@ version: v1
         displayName: Concreate request
         delete:
           description: delete a request
-    /messeges:
+    /messages:
       displayName: Client's messeges
       get:
         description: get a list of messeges
-      post:
-        description: make a new messege
     /workoutreports:
       displayName: resourceName
       post:
@@ -61,6 +59,8 @@ version: v1
             description: <<insert text or markdown here>>
 /trainers:
   displayName: triners
+  get:
+    description: get a list of trainers
   post:
     description: create a new trainer
   /{id}:
@@ -97,7 +97,7 @@ version: v1
                   description: <<insert text or markdown here>>
                 delete:
                   description: <<insert text or markdown here>>
-                /excercises:
+                /exercises:
                   displayName: resourceName
                   get:
                     description: <<insert text or markdown here>>
@@ -117,3 +117,7 @@ version: v1
         displayName: concreate request
         put:
           description: update request
+/mesages:
+  displayName: resourceName
+  post:
+    description: <<insert text or markdown here>>

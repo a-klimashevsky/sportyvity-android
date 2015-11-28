@@ -19,8 +19,8 @@ public class Program {
     @SerializedName("price")
     private int mPrice;
 
-    @SerializedName("unit")
-    private int mUnits;
+    @SerializedName("currency")
+    private int mCurrency;
 
     @SerializedName("comments")
     private String mComments;
@@ -41,8 +41,8 @@ public class Program {
         return mPrice;
     }
 
-    public int getUnits() {
-        return mUnits;
+    public int getCurrency() {
+        return mCurrency;
     }
 
     public String getComments() {
