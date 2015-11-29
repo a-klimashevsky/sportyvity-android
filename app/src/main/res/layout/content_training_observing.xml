@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -13,4 +14,332 @@
     tools:context="com.sportivity.TrainingObservingActivity"
     tools:showIn="@layout/activity_training_observing">
 
-</RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_arrow_down"
+        android:drawablePadding="4dp"
+        android:text="Workout A"
+        android:textColor="#a30000"
+        android:textSize="14sp"
+        android:layout_marginBottom="16dp"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+
+        <TableRow android:layout_marginBottom="4dp">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:background="@drawable/block_background"
+                android:paddingBottom="4dp"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:text="Deadlift"
+                android:textColor="#fff"
+                android:textSize="14sp"
+                android:layout_marginEnd="4dp"/>
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/block_background_gray"
+                android:paddingBottom="4dp"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:text="6*3"
+                android:textColor="#fff"
+                android:textSize="14sp"/>
+        </TableRow>
+        <TableRow android:layout_marginBottom="4dp">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:background="@drawable/block_background"
+                android:paddingBottom="4dp"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:text="Benchpress"
+                android:textColor="#fff"
+                android:textSize="14sp"
+                android:layout_marginEnd="4dp"/>
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/block_background_gray"
+                android:paddingBottom="4dp"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:text="6*4"
+                android:textColor="#fff"
+                android:textSize="14sp"/>
+        </TableRow>
+        <TableRow android:layout_marginBottom="4dp">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:background="@drawable/block_background"
+                android:paddingBottom="4dp"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:text="Thrust rod"
+                android:textColor="#fff"
+                android:textSize="14sp"
+                android:layout_marginEnd="4dp"/>
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/block_background_gray"
+                android:paddingBottom="4dp"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:text="5*4"
+                android:textColor="#fff"
+                android:textSize="14sp"/>
+        </TableRow>
+        <TableRow android:layout_marginBottom="4dp">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:background="@drawable/block_background"
+                android:paddingBottom="4dp"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:text="Pull-ups"
+                android:textColor="#fff"
+                android:textSize="14sp"
+                android:layout_marginEnd="4dp"/>
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/block_background_gray"
+                android:paddingBottom="4dp"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:text="5*4"
+                android:textColor="#fff"
+                android:textSize="14sp"/>
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:textSize="20sp"
+        android:textStyle="normal"
+        android:typeface="sans"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/colorAccent"
+        android:textAllCaps="false"
+        android:id="@+id/start_workout"
+        android:background="@drawable/button_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Begin the Workout"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_arrow_down"
+        android:drawablePadding="4dp"
+        android:layout_marginBottom="16dp"
+        android:text="Workout B"
+        android:textColor="#a30000"
+        android:textSize="14sp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableLayout
+            android:id="@+id/table2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+
+            <TableRow android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:background="@drawable/block_background"
+                    android:paddingBottom="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:text="Push-ups"
+                    android:textColor="#fff"
+                    android:textSize="14sp"
+                    android:layout_marginEnd="4dp"/>
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/block_background_gray"
+                    android:paddingBottom="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:text="10*3"
+                    android:textColor="#fff"
+                    android:textSize="14sp"/>
+            </TableRow>
+            <TableRow android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:background="@drawable/block_background"
+                    android:paddingBottom="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:text="Push-ups"
+                    android:textColor="#fff"
+                    android:textSize="14sp"
+                    android:layout_marginEnd="4dp"/>
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/block_background_gray"
+                    android:paddingBottom="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:text="10*3"
+                    android:textColor="#fff"
+                    android:textSize="14sp"/>
+            </TableRow>
+            <TableRow android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:background="@drawable/block_background"
+                    android:paddingBottom="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:text="Push-ups"
+                    android:textColor="#fff"
+                    android:textSize="14sp"
+                    android:layout_marginEnd="4dp"/>
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/block_background_gray"
+                    android:paddingBottom="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:text="10*3"
+                    android:textColor="#fff"
+                    android:textSize="14sp"/>
+            </TableRow>
+            <TableRow android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:background="@drawable/block_background"
+                    android:paddingBottom="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:text="Push-ups"
+                    android:textColor="#fff"
+                    android:textSize="14sp"
+                    android:layout_marginEnd="4dp"/>
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/block_background_gray"
+                    android:paddingBottom="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:text="10*3"
+                    android:textColor="#fff"
+                    android:textSize="14sp"/>
+            </TableRow>
+            <TableRow android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:background="@drawable/block_background"
+                    android:paddingBottom="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:text="Push-ups"
+                    android:textColor="#fff"
+                    android:textSize="14sp"
+                    android:layout_marginEnd="4dp"/>
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/block_background_gray"
+                    android:paddingBottom="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:text="10*3"
+                    android:textColor="#fff"
+                    android:textSize="14sp"/>
+            </TableRow>
+        </TableLayout>
+        <RelativeLayout
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/colorAccent"
+            android:layout_alignBottom="@id/table2"
+            android:layout_alignEnd="@id/table2"
+            android:layout_alignStart="@id/table2"
+            android:layout_alignTop="@id/table2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:gravity="center_horizontal"
+                android:padding="8dp"
+                android:background="#fff"
+                android:layout_centerVertical="true"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp"
+                android:text="Buy to Unlock the Workout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_arrow_up"
+        android:drawablePadding="4dp"
+        android:text="Workout C"
+        android:textColor="#a30000"
+        android:textSize="14sp"/>
+</LinearLayout>

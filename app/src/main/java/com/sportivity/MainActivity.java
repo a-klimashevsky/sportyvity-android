@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-
+        setTitle("Trainers");
         fragmentManager
                 .beginTransaction()
                 .replace(R.id.container, TrainerListFragment.newInstance())
