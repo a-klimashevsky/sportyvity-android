@@ -46,6 +46,9 @@
             android:label="@string/title_activity_workout"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="0933160594a44b00983d5c7736e13a684d669cfe" />
     </application>
 
 </manifest>

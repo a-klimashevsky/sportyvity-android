@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sportivity.util.TrainerTypesUtil;
 import com.sportivity.web.entities.Trainer;
@@ -55,7 +56,7 @@ public class NewRequestActivity extends AppCompatActivity {
     Spinner mAimsSpinner;
 
     @OnClick(R.id.send_request)
-    void sendRequest(){
+    void sendRequest() {
         Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
@@ -92,12 +93,12 @@ public class NewRequestActivity extends AppCompatActivity {
         Picasso
                 .with(mNameView.getContext())
                 .load(mTrainer.getAvatar())
-                .resize(240,240)
+                .resize(240, 240)
                 .centerCrop()
                 .into(mAvatarView, new Callback() {
                     @Override
                     public void onSuccess() {
-                        BitmapDrawable d= (BitmapDrawable) mAvatarView.getDrawable();
+                        BitmapDrawable d = (BitmapDrawable) mAvatarView.getDrawable();
                         Palette.Builder builder = new Palette.Builder(d.getBitmap());
                         Palette p = builder.generate();
                         mView.setBackgroundColor(p.getLightMutedColor(Color.GRAY));
@@ -106,16 +107,15 @@ public class NewRequestActivity extends AppCompatActivity {
 
                     @Override
                     public void onError() {
-
+                        Toast.makeText(NewRequestActivity.this, "Cannot fetch image", Toast.LENGTH_LONG).show();
                     }
                 });
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case android.R.id.home:
-                finish();
+        if (item.getItemId() == android.R.id.home) {
+            finish();
         }
         return true;
     }

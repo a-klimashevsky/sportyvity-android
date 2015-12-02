@@ -12,11 +12,11 @@ import java.util.List;
  */
 public class ExerciseListLoader extends FixedAsyncTaskLoader<List<Exercise>> {
 
-    private String mClientId;
+    private final String mClientId;
 
-    private String mProgramId;
+    private final String mProgramId;
 
-    private String mWorkoutId;
+    private final String mWorkoutId;
 
     public ExerciseListLoader(Context context, String clientId, String programId, String workoutId) {
         super(context);
