@@ -117,9 +117,7 @@ public class WorkoutActivity extends AppCompatActivity {
     private void showPopup() {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         View v = getCurrentFocus();
-
-            imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), 0);
-
+        imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), 0);
         mPopupView.setVisibility(View.VISIBLE);
     }
 
