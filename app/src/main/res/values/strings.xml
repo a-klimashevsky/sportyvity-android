@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sportivity</string>
+    <string name="app_name">Fit.ME</string>
     <string name="title_activity_main">Trainers</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -10,4 +10,8 @@
     <string name="title_activity_new_request">Trainer Request</string>
     <string name="title_activity_training_observing">Training observing</string>
     <string name="title_activity_workout">Workout</string>
+    <string name="nav_training">My training</string>
+    <string name="nav_chat">Chat</string>
+    <string name="nav_trainers">Trainers</string>
+    <string name="nav_connect">Connect</string>
 </resources>

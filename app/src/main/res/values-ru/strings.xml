@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fit.ME</string>
+    <string name="title_activity_main">Тренера</string>
+
+    <string name="navigation_drawer_open">Открыть меню</string>
+    <string name="navigation_drawer_close">Закрыть меню</string>
+
+    <string name="action_settings">Настройки</string>
+    <string name="title_activity_trainer">Тренер</string>
+    <string name="title_activity_new_request">Запрос</string>
+    <string name="title_activity_training_observing">Моя тренировка</string>
+    <string name="title_activity_workout">План тренировки</string>
+    <string name="nav_training">Моя тренировка</string>
+    <string name="nav_chat">Сообщения</string>
+    <string name="nav_trainers">Тренеры</string>
+    <string name="nav_connect">Поделиться</string>
+</resources>

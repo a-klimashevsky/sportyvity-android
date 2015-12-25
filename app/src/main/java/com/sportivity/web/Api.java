@@ -1,11 +1,13 @@
 package com.sportivity.web;
 
+import com.sportivity.web.entities.AuthDataApi;
 import com.sportivity.web.entities.Client;
 import com.sportivity.web.entities.Exercise;
 import com.sportivity.web.entities.Message;
 import com.sportivity.web.entities.Program;
 import com.sportivity.web.entities.Request;
 import com.sportivity.web.entities.Result;
+import com.sportivity.web.entities.Session;
 import com.sportivity.web.entities.Trainer;
 import com.sportivity.web.entities.Workout;
 import com.sportivity.web.entities.WorkoutReport;
@@ -24,6 +26,10 @@ import retrofit.http.Query;
  * Created by Alex Klimashevsky on 28.11.2015.
  */
 public interface Api {
+
+    @POST("/sessions")
+    Session login(@Body AuthDataApi dataApi);
+
     @POST("/clients")
     Client createClient(@Body Client client);
 
