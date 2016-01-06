@@ -1,21 +1,14 @@
 package com.sportivity;
 
-import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Debug;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentManager;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -25,16 +18,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.SearchView;
 
-import com.sportivity.fragments.TrainerListFragment;
 import com.crashlytics.android.Crashlytics;
+import com.sportivity.fragments.TrainerListFragment;
 import com.sportivity.views.HexDrawable;
-import com.sportivity.web.Server;
-import com.sportivity.web.entities.AuthDataApi;
 
 import io.fabric.sdk.android.Fabric;
-import jp.wasabeef.blurry.Blurry;
 import jp.wasabeef.blurry.internal.Blur;
 import jp.wasabeef.blurry.internal.BlurFactor;
 
@@ -45,7 +34,6 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics());
-
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

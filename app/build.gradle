@@ -12,6 +12,9 @@ apply plugin: 'io.fabric'
 apply from: "../quality.gradle"
 repositories {
     maven { url 'https://maven.fabric.io/public' }
+    maven {
+        url "https://mymavenrepo.com/repo/P6lORgB8p05Q5cerIdOD/"
+    }
 }
 
 
@@ -47,7 +50,7 @@ android {
 }
 
 dependencies {
-    compile project(':sportivity-java-common')
+    compile("me.fitns:java-common:0.1-SNAPSHOT")
     compile fileTree(include: ['*.jar'], dir: 'libs')
 
     testCompile 'junit:junit:4.12'
