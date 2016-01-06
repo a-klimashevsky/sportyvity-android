@@ -26,6 +26,9 @@ android {
         versionCode 1
         versionName "1.0"
         generatedDensities = []
+        // Warning:Renderscript support mode is not currently supported with renderscript target 21+
+        renderscriptTargetApi 20
+        renderscriptSupportModeEnabled true
     }
     buildTypes {
         release {
@@ -44,7 +47,9 @@ android {
 }
 
 dependencies {
+    compile project(':sportivity-java-common')
     compile fileTree(include: ['*.jar'], dir: 'libs')
+
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.squareup.retrofit:retrofit:1.8.0'
@@ -60,4 +65,5 @@ dependencies {
     }
     compile 'com.bettervectordrawable:lib:0.7+'
     compile 'com.facebook.android:facebook-android-sdk:4.6.0'
+    compile 'jp.wasabeef:blurry:1.0.5'
 }

@@ -1,5 +1,6 @@
 package com.sportivity.views;
 
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
@@ -25,6 +26,7 @@ public class HexDrawable extends Drawable {
     private int mBackgroundColor;
     private int mStrokeColor;
     private int mStrokeWidth;
+    private Bitmap mIconBitmap;
     @ViewDebug.ExportedProperty(deepExport = true, prefix = "state_")
     private HexState mState = new HexState();
 
@@ -102,6 +104,9 @@ public class HexDrawable extends Drawable {
         canvas.drawPath(hexagonPath, paint);
         canvas.clipPath(hexagonPath, Region.Op.REPLACE);
         canvas.drawColor(mBackgroundColor);
+        if(mIconBitmap != null) {
+            canvas.drawBitmap(mIconBitmap, 0,0,paint);
+        }
         canvas.drawPath(hexagonPath, paint);
     }
 
@@ -118,6 +123,10 @@ public class HexDrawable extends Drawable {
     @Override
     public int getOpacity() {
         return 0;
+    }
+
+    public void setmIconBitmap(Bitmap mIconBitmap) {
+        this.mIconBitmap = mIconBitmap;
     }
 
     private static class HexState extends ConstantState{

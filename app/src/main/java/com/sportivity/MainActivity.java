@@ -3,7 +3,10 @@ package com.sportivity;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -20,6 +23,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.SearchView;
 
@@ -30,6 +34,9 @@ import com.sportivity.web.Server;
 import com.sportivity.web.entities.AuthDataApi;
 
 import io.fabric.sdk.android.Fabric;
+import jp.wasabeef.blurry.Blurry;
+import jp.wasabeef.blurry.internal.Blur;
+import jp.wasabeef.blurry.internal.BlurFactor;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -53,10 +60,33 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.getMenu().getItem(0).setIcon(new HexDrawable());
         ImageView avatarView = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.avatar);
-        avatarView.setImageDrawable(new HexDrawable());
+        HexDrawable d = new HexDrawable();
+        d.setStrokeColor(Color.WHITE);
+        d.setStrokeWidth(5);
+        d.setmIconBitmap(((BitmapDrawable) getResources().getDrawable(R.mipmap.ic_test)).getBitmap());
+        avatarView.setImageDrawable(d);
+
+        ViewGroup v = (ViewGroup) navigationView.getHeaderView(0).findViewById(R.id.header_background);
+        v.setBackground(getResources().getDrawable(R.mipmap.ic_test));
+        BlurFactor factor = new BlurFactor();
+        factor.radius = 8;
+        //factor.color = Color.BLUE;
+        factor.sampling = 2;
+        factor.width = 300;
+        factor.height = 200;
+        Bitmap b = Blur.rs(this, ((BitmapDrawable) getResources().getDrawable(R.mipmap.ic_test)).getBitmap(), factor);
+        Drawable bd = new BitmapDrawable(b);
+        bd.setColorFilter(Color.BLUE, PorterDuff.Mode.SCREEN);
+        v.setBackground(bd);
+        /*Blurry.with(this)
+                .radius(10)
+                .sampling(8)
+                .color(Color.argb(66, 255, 255, 0))
+                .async()
+                .capture(avatarView)
+                .into(avatarView);*/
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        setTitle("Trainers");
         fragmentManager
                 .beginTransaction()
                 .replace(R.id.container, TrainerListFragment.newInstance())
