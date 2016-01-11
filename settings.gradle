@@ -1,1 +1,2 @@
-include ':app'
+include ':app', ':sportivity-java-common'
+project(':sportivity-java-common').projectDir = new File('../sportivity-java-common')
