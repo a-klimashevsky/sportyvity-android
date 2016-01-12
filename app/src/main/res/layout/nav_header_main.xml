@@ -1,23 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/header_background"
-              android:layout_width="match_parent"
-              android:layout_height="@dimen/nav_header_height"
-              android:background="#0c334c"
-              android:gravity="top"
-              android:orientation="vertical"
-              android:theme="@style/ThemeOverlay.AppCompat.Dark">
-    <ImageView
-        android:layout_marginTop="32dp"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/avatar"
-        android:layout_width="115dp"
-        android:layout_height="100dp"
-        android:scaleType="matrix"/>
-    <TextView
-        android:layout_gravity="center_horizontal"
-        android:text="Alex Shoub"
-        android:textSize="21sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/header_background"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_header_height"
+        android:background="#0c334c"
+        android:gravity="top"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="115dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:scaleType="matrix" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Alex Shoub"
+            android:textSize="21sp" />
+    </LinearLayout>
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp">
+
+        <TableRow
+            android:id="@+id/workout"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/workout_image"
+                android:layout_width="@dimen/nav_menu_icon_width"
+                android:layout_height="@dimen/nav_menu_icon_height"
+                android:layout_marginEnd="16dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_workout" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nav_training"
+                android:textSize="21sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/messages"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/message_image"
+                android:layout_width="@dimen/nav_menu_icon_width"
+                android:layout_height="@dimen/nav_menu_icon_height"
+                android:layout_marginEnd="16dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_messages" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nav_chat"
+                android:textSize="21sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/trainers"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/trainers_image"
+                android:layout_width="@dimen/nav_menu_icon_width"
+                android:layout_height="@dimen/nav_menu_icon_height"
+                android:layout_marginEnd="16dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_trainer" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nav_trainers"
+                android:textSize="21sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/share"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/share_image"
+                android:layout_width="@dimen/nav_menu_icon_width"
+                android:layout_height="@dimen/nav_menu_icon_height"
+                android:layout_marginEnd="16dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_share" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nav_connect"
+                android:textSize="21sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/settings"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/settings_image"
+                android:layout_width="@dimen/nav_menu_icon_width"
+                android:layout_height="@dimen/nav_menu_icon_height"
+                android:layout_marginEnd="16dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_settings" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nav_settings"
+                android:textSize="21sp" />
+        </TableRow>
+    </TableLayout>
 </LinearLayout>

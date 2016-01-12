@@ -15,4 +15,5 @@
     <string name="nav_chat">Сообщения</string>
     <string name="nav_trainers">Тренеры</string>
     <string name="nav_connect">Поделиться</string>
+    <string name="nav_settings">Настройки</string>
 </resources>

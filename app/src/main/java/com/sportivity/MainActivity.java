@@ -16,8 +16,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 import com.crashlytics.android.Crashlytics;
 import com.sportivity.fragments.TrainerListFragment;
@@ -29,6 +31,8 @@ import jp.wasabeef.blurry.internal.BlurFactor;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private static final int MENU_ICON_STROKE_WIDTH = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +50,17 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.getMenu().getItem(0).setIcon(new HexDrawable());
-        ImageView avatarView = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.avatar);
+
+        ViewGroup nav = (ViewGroup) navigationView.getHeaderView(0);
+        setBackground(nav, R.id.workout_image, "#ef717a");
+        setBackground(nav, R.id.message_image, "#4bbd9c");
+        setBackground(nav, R.id.trainers_image, "#3398db");
+        setBackground(nav, R.id.share_image, "#f8a736");
+        setBackground(nav, R.id.settings_image, "#c1392b");
+
+
+
+        ImageView avatarView = (ImageView) nav.findViewById(R.id.avatar);
         HexDrawable d = new HexDrawable();
         d.setStrokeColor(Color.WHITE);
         d.setStrokeWidth(5);
@@ -58,7 +71,6 @@ public class MainActivity extends AppCompatActivity
         v.setBackground(getResources().getDrawable(R.mipmap.ic_test));
         BlurFactor factor = new BlurFactor();
         factor.radius = 8;
-        //factor.color = Color.BLUE;
         factor.sampling = 2;
         factor.width = 300;
         factor.height = 200;
@@ -66,19 +78,26 @@ public class MainActivity extends AppCompatActivity
         Drawable bd = new BitmapDrawable(b);
         bd.setColorFilter(Color.BLUE, PorterDuff.Mode.SCREEN);
         v.setBackground(bd);
-        /*Blurry.with(this)
-                .radius(10)
-                .sampling(8)
-                .color(Color.argb(66, 255, 255, 0))
-                .async()
-                .capture(avatarView)
-                .into(avatarView);*/
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager
                 .beginTransaction()
                 .replace(R.id.container, TrainerListFragment.newInstance())
                 .commit();
+    }
+
+    private void setBackground(View root, int id, String color) {
+        Drawable workoutDrawable = getDrawableForColor(color);
+        ImageView mWorkoutImageView = (ImageView) root.findViewById(id);
+        mWorkoutImageView.setBackground(workoutDrawable);
+    }
+
+    private Drawable getDrawableForColor(String color) {
+        HexDrawable drawable = new HexDrawable();
+        drawable.setBackgroundColor(Color.parseColor(color));
+        drawable.setStrokeColor(Color.parseColor(color));
+        drawable.setStrokeWidth(MENU_ICON_STROKE_WIDTH);
+        return drawable;
     }
 
     @Override
@@ -121,7 +140,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_search) {
+        /*if (id == R.id.nav_search) {
             fragmentManager
                     .beginTransaction()
                     .replace(R.id.container, TrainerListFragment.newInstance())
@@ -130,7 +149,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_trains) {
             Intent intent = new Intent(this, TrainingObservingActivity.class);
             startActivity(intent);
-        }
+        }*/
 
         invalidateOptionsMenu();
 

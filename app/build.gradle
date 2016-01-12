@@ -67,5 +67,5 @@ dependencies {
     compile 'com.bettervectordrawable:lib:0.7+'
     compile 'com.facebook.android:facebook-android-sdk:4.6.0'
     compile 'jp.wasabeef:blurry:1.0.5'
-    compile project(':sportivity-java-common')
+    compile 'me.fitns:java-common:0.2-SNAPSHOT'
 }
